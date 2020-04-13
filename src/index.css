@@ -5,11 +5,21 @@
 }
 
 body {
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   font-family: "Ubuntu", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(214, 107, 107);
+}
+
+main {
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 :root {

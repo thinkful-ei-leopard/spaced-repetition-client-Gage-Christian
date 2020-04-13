@@ -1,0 +1,39 @@
+* {
+    text-align: center;
+}
+
+.login-signup-form {
+  width: 300px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: #70d09f;
+}
+
+.login-signup-form > * {
+  background-color: #70d09f;
+  margin-bottom: 20px;
+}
+
+.login-signup-form > p {
+  font-size: 20px;
+}
+
+.login-signup-form > h2 {
+  font-size: 28px;
+}
+
+.form-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-footer-button {
+  width: 75px;
+  height: 30px;
+  margin: 20px 0px 0px;
+}
+
+.form-footer-link {
+  margin-top: 20px;
+}

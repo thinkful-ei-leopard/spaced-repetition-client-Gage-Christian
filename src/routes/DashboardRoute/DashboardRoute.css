@@ -1,2 +1,31 @@
+#dashboard-container {
+  justify-content: start;
+}
 
+.dashboard-header {
+  margin: 25px 0 0;
+  font-size: 36px;
+}
+
+.dashboard-language {
+  margin: 30px;
+}
+
+.dashboard-welcome {
+  margin-bottom: 15px;
+}
+
+.practice-link {
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  background-color: #70a1d0;
+  border: 1px solid #70a1d0;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.practice-link:hover {
+  background-color: lightgray;
+}
 

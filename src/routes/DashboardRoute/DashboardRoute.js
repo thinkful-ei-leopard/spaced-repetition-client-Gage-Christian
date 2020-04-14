@@ -58,16 +58,13 @@ class DashboardRoute extends Component {
 
   render() {
     return (
-   <main>
-     <h2>Dashboard</h2>
-      <section>
-        <h3> Welcome! </h3>
-        <p>Learn {this.state.language.name} Here!</p>
-        <Button type='button'>START PRACTICING</Button>
-        <WordList words={this.state.words} language={this.state.language}/>
-        <Link to='/learn'> 
-        </Link>
-      </section>
+      <main id='dashboard-container'>
+        <h2 className='dashboard-header'>Dashboard</h2>
+        <section>
+          <h2 className='dashboard-language'>Learn {this.state.language.name} Here!</h2>
+          <Link to='/learn' className='practice-link'>Start practicing</Link>
+          <WordList words={this.state.words} language={this.state.language}/>
+        </section>
       </main>
     );
   }

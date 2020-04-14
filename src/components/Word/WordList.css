@@ -1,0 +1,38 @@
+.words-list-container {
+  padding: 5px;
+  background-color: #70d09f;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+.words-list-header {
+  font-size: 24px;
+}
+
+.words-list-ul {
+  max-height: 425px;
+  padding: 0 10px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  overflow-y: scroll;
+}
+
+.words-list-item {
+  background-color: #d07071;
+  width: 200px;
+  margin: 5px 0;
+  padding: 5px 0;
+  border-radius: 5px;
+}
+
+.words-list-score {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.word-span {
+  display: block;
+}

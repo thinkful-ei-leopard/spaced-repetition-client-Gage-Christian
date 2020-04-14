@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import UserContext from '../../contexts/UserContext'
 import LanguageService from '../../services/language-service'
+import './LearningRoute.css'
 
 class LearningRoute extends Component {
   static contextType = UserContext
@@ -33,12 +34,12 @@ class LearningRoute extends Component {
   
   render() {
     return (
-      <section>
-        <main>
-          <h2>Translate the word:</h2>
-          <span>{this.state.nextWord}</span> 
-          <form>
-            <label htmlFor='learn-guess-input'>
+      <section className='learning-route-container'>
+        <main id='learning-route-main'>
+          <h2 className='learning-route-header'>Translate the word:</h2>
+          <span className='learning-route-original'>{this.state.nextWord}</span> 
+          <form className='learning-route-form'>
+            <label htmlFor='learn-guess-input' className='learning-route-label'>
               What's the translation for this word? 
             </label>
             <input type='text' required id='learn-guess-input' />
@@ -47,8 +48,8 @@ class LearningRoute extends Component {
           You have answered this word correctly {this.state.wordCorrectCount} times.
           You have answered this word incorrectly {this.state.wordIncorrectCount} times.
         </main>
-        <p>Your total score is: {this.state.totalScore}</p>
-        </section>
+        <p className='learning-route-total'>Your total score is: {this.state.totalScore}</p>
+      </section>
     );
   }
 }

@@ -1,0 +1,53 @@
+.learning-route-container {
+  padding: 10px;
+  height: 400px;
+  max-width: 80%;
+  background-color: #70d09f;
+  border-radius: 10px;
+}
+
+#learning-route-main {
+  height: 300px;
+  max-width: 800px;
+}
+
+.learning-route-header {
+  margin: 10px;
+}
+
+.learning-route-original {
+  margin: 15px;
+  font-size: 24px;
+}
+
+.learning-route-form {
+  margin: 15px 0;
+}
+
+.learning-route-label {
+  font-size: 18px;
+}
+
+.learning-route-total {
+  font-size: 22px;
+}
+
+@media screen and (min-width: 464px) {
+  .learning-route-container {
+    height: 380px;
+  }
+
+  #learning-route-main {
+    height: 280px;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .learning-route-container {
+    height: 320px;
+  }
+
+  #learning-route-main {
+    height: 220px;
+  }
+}

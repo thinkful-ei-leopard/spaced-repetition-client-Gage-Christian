@@ -36,3 +36,13 @@
 .word-span {
   display: block;
 }
+
+.original {
+  font-size: 22px;
+  margin: 15px 0;
+}
+
+.translation {
+  font-size: 18px;
+  margin: 10px 0 10px;
+}

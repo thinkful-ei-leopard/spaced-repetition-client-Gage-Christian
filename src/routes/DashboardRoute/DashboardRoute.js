@@ -4,7 +4,6 @@ import WordList from '../../components/Word/WordList'
 import { Link } from 'react-router-dom'
 import UserContext from '../../contexts/UserContext'
 import TokenService from '../../services/token-service'
-import Button from '../../components/Button/Button';
 import './DashboardRoute.css';
 
 class DashboardRoute extends Component {

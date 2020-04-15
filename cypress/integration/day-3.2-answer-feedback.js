@@ -83,7 +83,7 @@ describe(`User story: Answer feedback`, function() {
           .then(langGuessIncFx => fixtures.push(langGuessIncFx)),
       ]).then(() => {
         const [languageHeadFixture, incorrectFixture] = fixtures
-
+        cy.wait(1000)
         cy.get('main').within($main => {
           cy.get('.DisplayScore p')
             .should(
@@ -98,7 +98,7 @@ describe(`User story: Answer feedback`, function() {
           cy.get('.DisplayFeedback p')
             .should(
               'have.text',
-              `The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer} and you chose ${guess}!`,
+              `The correct translation for ${languageHeadFixture.currWord} was ${incorrectFixture.answer} and you chose ${guess}!`,
             )
           cy.get('button')
             .should(

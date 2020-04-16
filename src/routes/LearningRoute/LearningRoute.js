@@ -47,10 +47,9 @@ class LearningRoute extends Component {
   }
 
   generateDisplayFeedback = (guess = this.state.guessGiven, word = this.state.lastWord, answer = this.state.lastCorrect) => {
-    console.log(word, answer)
-    if (guess === null) {
+    if (this.state.guessedCorrectly === null) {
       return ""
-    } else if (guess !== null) {
+    } else if (this.state.guessedCorrectly !== null) {
       return <p>The correct translation for {word} was {answer} and you chose {guess}!</p>
     }
   }
@@ -66,9 +65,10 @@ class LearningRoute extends Component {
   }
 
   nextHandler = async (e) => {
-    await this.updateStateFromHead()
-    // document.getElementById('learn-guess-input').value = ''
-    this.setState({guessGiven : ''})
+    this.setState({
+      guessGiven : '',
+      guessedCorrectly: null
+    })
   }
 
   guessHandler = async (e) => {
@@ -82,8 +82,11 @@ class LearningRoute extends Component {
       guessGiven,
       guessedCorrectly,
       lastCorrect,
-      lastWord
-    })   
+      lastWord,
+      wordCorrectCount: guessedCorrectly ? this.state.wordCorrectCount++ : this.state.wordCorrectCount,
+      wordIncorrectCount: guessedCorrectly ? this.state.wordIncorrectCount : this.state.wordIncorrectCount++,
+      totalScore:  guessedCorrectly ? this.state.totalScore++ : this.state.totalScore--
+    })
   }
   
   changeGuessHandler = (e) => {

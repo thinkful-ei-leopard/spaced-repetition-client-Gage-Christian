@@ -17,7 +17,6 @@ class DashboardRoute extends Component {
   componentDidMount = () => {
     this.fetchWords()
       .then(obj => {
-        console.log(obj)
         this.setState({
           words: obj.words,
           language: obj.language
@@ -26,7 +25,6 @@ class DashboardRoute extends Component {
   }
 
   fetchWords = () => {
-    console.log(this.props)
     return (
       fetch(`${config.API_ENDPOINT}/language`, {
         headers: {

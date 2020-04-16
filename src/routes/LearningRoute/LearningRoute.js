@@ -25,7 +25,6 @@ class LearningRoute extends Component {
   updateStateFromHead = () => {
     LanguageService.getHead()
       .then(obj => {
-        console.log(obj)
         this.setState({
           currWord: obj.currWord,
           correctAnswer: obj.correctAnswer,

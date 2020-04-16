@@ -15,7 +15,7 @@
       "incorrect_count": 0,
       "correct_count": 0,
       "language_id": 1,
-      "next": 2
+      "nextWord": 2
     },
     {
       "id": 2,
@@ -25,7 +25,7 @@
       "incorrect_count": 0,
       "correct_count": 2,
       "language_id": 1,
-      "next": 3
+      "nextWord": 3
     },
     {
       "id": 3,
@@ -35,7 +35,7 @@
       "incorrect_count": 3,
       "correct_count": 6,
       "language_id": 1,
-      "next": 4
+      "nextWord": 4
     },
     {
       "id": 4,
@@ -45,7 +45,7 @@
       "incorrect_count": 2,
       "correct_count": 6,
       "language_id": 1,
-      "next": 5
+      "nextWord": 5
     },
     {
       "id": 5,
@@ -55,7 +55,7 @@
       "incorrect_count": 0,
       "correct_count": 9,
       "language_id": 1,
-      "next": null
+      "nextWord": null
     }
   ]
 }

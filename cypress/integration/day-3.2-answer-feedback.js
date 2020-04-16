@@ -111,7 +111,7 @@ describe(`User story: Answer feedback`, function() {
   })
 
   context(`Given guess is correct`, () => {
-    const guess = 'test-guess-incorrect'
+    const guess = 'test-answer-from-incorrect-guess'
 
     beforeEach(() => {
       cy.route({
@@ -136,13 +136,13 @@ describe(`User story: Answer feedback`, function() {
         cy.fixture('language-guess-correct.json')
           .then(fx => fixtures.push(fx)),
       ]).then(() => {
-        const [languageHeadFixture, incorrectFixture] = fixtures
+        const [languageHeadFixture, correctFixture] = fixtures
 
         cy.get('main').within($main => {
           cy.get('.DisplayScore p')
             .should(
               'have.text',
-              `Your total score is: ${incorrectFixture.totalScore}`,
+              `Your total score is: ${correctFixture.totalScore}`,
             )
           cy.get('h2')
             .should(
@@ -152,7 +152,7 @@ describe(`User story: Answer feedback`, function() {
           cy.get('.DisplayFeedback p')
             .should(
               'have.text',
-              `The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer} and you chose ${guess}!`,
+              `The correct translation for ${languageHeadFixture.currWord} was ${languageHeadFixture.correctAnswer} and you chose ${guess}!`,
             )
           cy.get('button')
             .should(

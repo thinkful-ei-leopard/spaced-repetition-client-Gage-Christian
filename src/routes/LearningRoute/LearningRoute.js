@@ -45,12 +45,31 @@ class LearningRoute extends Component {
   componentDidMount = async () => {
     this.updateStateFromHead()
   }
+  
+  generateForm = () => {
+    if (this.state.guessedCorrectly === null) {
+      return (
+        <form className='learning-route-form' onSubmit={this.guessHandler}>
+          <label htmlFor='learn-guess-input' className='learning-route-label'>
+            What's the translation for this word? 
+          </label>
+          <input type='text' required id='learn-guess-input' value={this.state.guessGiven} onChange={this.changeGuessHandler}/>
+          <button type='submit'>Submit your answer</button>
+        </form>
+      )
+    } else {
+      return (
+        <form className='learning-route-form' onSubmit={this.guessHandler}>
+          <button type='button' onClick={this.nextHandler}>Try another word!</button>
+        </form>)
+    }
+  }
 
   generateDisplayFeedback = (guess = this.state.guessGiven, word = this.state.lastWord, answer = this.state.lastCorrect) => {
     if (this.state.guessedCorrectly === null) {
       return ""
     } else if (this.state.guessedCorrectly !== null) {
-      return <p>The correct translation for {word} was {answer} and you chose {guess}!</p>
+      return <p>The correct translation for <b>{word}</b> was <b>{answer}</b> and you chose <b>{guess}</b>!</p>
     }
   }
 
@@ -67,8 +86,10 @@ class LearningRoute extends Component {
   nextHandler = async (e) => {
     this.setState({
       guessGiven : '',
-      guessedCorrectly: null
+      guessedCorrectly: null,
+      nextWord: ''
     })
+    this.updateStateFromHead()
   }
 
   guessHandler = async (e) => {
@@ -96,17 +117,11 @@ class LearningRoute extends Component {
   render() {
     return (
       <section className='learning-route-container'>
-        <main id='learning-route-main'> <p>{JSON.stringify(this.state).replace(/,/g, '\n')}</p>
+        <main id='learning-route-main'> 
           <h2 id='learning-route-header'>{this.generateCorrectIncorrectHeader()}</h2>
           <div className='DisplayFeedback'>{this.generateDisplayFeedback()}</div>
           <span className='learning-route-original'>{this.state.currWord}</span> 
-          <form className='learning-route-form' onSubmit={this.guessHandler}>
-            <label htmlFor='learn-guess-input' className='learning-route-label'>
-              What's the translation for this word? 
-            </label>
-            <input type='text' required id='learn-guess-input' value={this.state.guessGiven} onChange={this.changeGuessHandler}/>
-            <button type='submit'>Submit your answer</button>
-          </form>
+          {this.generateForm()}
           You have answered this word correctly {this.state.wordCorrectCount} times.
           You have answered this word incorrectly {this.state.wordIncorrectCount} times.
           <div className='DisplayScore'>

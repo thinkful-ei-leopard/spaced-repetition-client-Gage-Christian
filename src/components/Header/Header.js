@@ -41,11 +41,9 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <h1>
           <Link to='/' className='Nav-link'>
-            Spaced Repetition
+            <h1>Spaced repetition</h1>
           </Link>
-        </h1>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}

@@ -34,7 +34,7 @@ describe(`User story: Presented with word`, function() {
           cy.get('h2')
             .should('have.text', 'Translate the word:')
             .siblings('span')
-            .should('have.text', languageHeadFixture.nextWord)
+            .should('have.text', languageHeadFixture.currWord)
         })
         cy.get('p').eq(0)
           .should(

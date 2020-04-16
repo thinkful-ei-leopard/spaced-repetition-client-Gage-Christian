@@ -11,11 +11,10 @@ header > * {
   background-color: #70d09f;
 }
 
-header > h1 {
+.Nav-link > h1 {
   font-size: 18px;
   margin: 0;
 }
-
 
 nav {
   display: flex;

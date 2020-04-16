@@ -7,8 +7,10 @@
 }
 
 #learning-route-main {
-  height: 300px;
+  height: 380px;
   max-width: 800px;
+  display: flex;
+  flex-direction: column;
 }
 
 .learning-route-header {
@@ -38,7 +40,7 @@
   }
 
   #learning-route-main {
-    height: 280px;
+    height: 360px;
   }
 }
 
@@ -48,6 +50,6 @@
   }
 
   #learning-route-main {
-    height: 220px;
+    height: 300px;
   }
 }
